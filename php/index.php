@@ -90,13 +90,13 @@
 	const xhttp = new XMLHttpRequest();
 	var json = JSON.stringify(data);
 	xhttp.open("POST","urlcontroller.php");
-	xhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+	xhttp.setRequestHeader("Content-Type","application/json");
 	xhttp.onreadystatechange = function(){
 	if (this.readyState == 4 && this.status == 200) {
 		alert(this.responseText);
 	}
 	}
-	xhttp.send("json=" + json);
+	xhttp.send(json);
 	}
  </script>
 </head>

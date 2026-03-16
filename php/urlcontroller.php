@@ -1,10 +1,10 @@
 <?php
-	$url = json_decode($_POST['json']); //obtain the json object
+	$json = file_get_contents('php://input');
+	$url = json_decode($json); //obtain the json object
 	$servername = "localhost";
 	$username = "root";
 	$password = "LmP_2k26";
 	$dbname = "urlsdb";
-
 	try {
 	$conn = new PDO("mysql:host=$servername;dbname=$dbname",$username,$password);	
 	$conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
@@ -34,9 +34,9 @@
 	if ($result->rowCount() == 0){
 		$sql = "INSERT INTO url (code, shortUrl,baseUrl,originalUrl, createdAt, updatedAt) VALUES('$code', '$shorturl','$baseurl','$url->url',now(),now())";
 		$conn->exec($sql);
-		echo "New URL saved" . $shorturl;
+		echo "New URL saved" . $shorturl; //NEW URL IN $SHORTURL
 	}else{
 		$row = $result->fetch();
-		echo "Url already in the DB: ". $row['shortUrl'];
+		echo "Url already in the DB: ". $row['shortUrl']; //OLD URL IN $ROW['shortUrl']
 	}
 ?>
