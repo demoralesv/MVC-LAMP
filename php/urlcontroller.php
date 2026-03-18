@@ -14,9 +14,7 @@
 	}
 
 
-	$json2 = getStats($conn);
-	$Jdata = json_decode($json2);
-	echo "dato: " . $Jdata[25]->countries[0]->name;
+
 
 	$chars = "1234567890qwertyuioplkjhgfdsazxcvbnm";
 	$code = "";
@@ -39,9 +37,9 @@
 	if ($result->rowCount() == 0){
 		$sql = "INSERT INTO url (code, shortUrl,baseUrl,originalUrl, createdAt, updatedAt) VALUES('$code', '$shorturl','$baseurl','$url->url',now(),now())";
 		$conn->exec($sql);
-		echo "URL Acortada con exito: " . $shorturl; //NEW URL IN $SHORTURL
+		echo $shorturl; //NEW URL IN $SHORTURL
 	}else{
 		$row = $result->fetch();
-		echo "URL Acortada con exito: ". $row['shortUrl']; //OLD URL IN $ROW['shortUrl']
+		echo $row['shortUrl']; //OLD URL IN $ROW['shortUrl']
 	}
 ?>

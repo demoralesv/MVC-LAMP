@@ -124,15 +124,11 @@ if (!empty($stats) && $selectedID !== null) {
           <div class="campoUrl detalleVacio detalleTexto">
             <div>
               <strong>URL Original:</strong>
-              <a href="<?= htmlspecialchars($selectedDetail["urloriginal"]) ?>" target = "_blank"><?= htmlspecialchars($selectedDetail["urloriginal"]) ?></a>
+              <p><?= htmlspecialchars($selectedDetail["urloriginal"]) ?></p>
             </div>
             <div>
               <strong>URL Corta:</strong>
-              <a href="<?= htmlspecialchars($selectedDetail["shortUrl"]) ?>" target = "_blank"><?= htmlspecialchars($selectedDetail["shortUrl"]) ?></a>
-            </div>
-            <div>
-              <strong>Fecha de Creación:</strong>
-              <p><?= htmlspecialchars($selectedDetail["createdAt"]) ?></p>
+              <p><?= htmlspecialchars($selectedDetail["shortUrl"]) ?></p>
             </div>
 
             <div>

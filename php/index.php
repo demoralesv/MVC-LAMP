@@ -28,7 +28,16 @@
         }
         function mostrarMensajeExito(texto) {
           const mensaje = document.getElementById("mensajeExito");
-          mensaje.textContent = texto;
+
+          mensaje.innerHTML = 'URL Acortada con éxito: ';
+
+          const enlace = document.createElement("a");
+          enlace.href = texto;
+          enlace.textContent = texto;
+          enlace.target = "_blank";
+          enlace.rel = "noopener noreferrer";
+
+          mensaje.appendChild(enlace);
           mensaje.classList.add("mostrar");
         }
         function ocultarMensajeExito() {

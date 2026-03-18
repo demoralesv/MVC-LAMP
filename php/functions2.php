@@ -24,11 +24,10 @@ function getStats($db){
   $idUrl = $urls['id'];
   $urlagro[$idUrl] = [
    "id" => $idUrl,
-   "shortUrl" => $urls['shortUrl'],
-   "createdAt" => $urls['createdAt'],
    "urloriginal" => $urls['originalUrl'],
    "countries" => [],
-   "dates" => []
+   "dates" => [],
+   "shortUrl" => $urls['shortURL']
  ];
 }
 
